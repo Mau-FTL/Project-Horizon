@@ -1,300 +1,299 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>GO FTL</title>
-	<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
-	<script src="https://kit.fontawesome.com/8a24a0c95e.js" crossorigin="anonymous"></script>
-	<script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js" crossorigin="anonymous"></script>
+    <title>GO FTL</title>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
+    <script src="https://kit.fontawesome.com/8a24a0c95e.js" crossorigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js" crossorigin="anonymous"></script>
 </head>
-	<style>
-		/*  START OF RESET  */
-		/* http://meyerweb.com/eric/tools/css/reset/ 
+<style>
+    /*  START OF RESET  */
+    /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-		html,
-		body,
-		div,
-		span,
-		applet,
-		object,
-		iframe,
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p,
-		blockquote,
-		pre,
-		a,
-		abbr,
-		acronym,
-		address,
-		big,
-		cite,
-		code,
-		del,
-		dfn,
-		em,
-		img,
-		ins,
-		kbd,
-		q,
-		s,
-		samp,
-		small,
-		strike,
-		strong,
-		sub,
-		sup,
-		tt,
-		var,
-		b,
-		u,
-		i,
-		center,
-		dl,
-		dt,
-		dd,
-		ol,
-		ul,
-		li,
-		fieldset,
-		form,
-		label,
-		legend,
-		table,
-		caption,
-		tbody,
-		tfoot,
-		thead,
-		tr,
-		th,
-		td,
-		article,
-		aside,
-		canvas,
-		details,
-		embed,
-		figure,
-		figcaption,
-		footer,
-		header,
-		hgroup,
-		menu,
-		nav,
-		output,
-		ruby,
-		section,
-		summary,
-		time,
-		mark,
-		audio,
-		video {
-			margin: 0;
-			padding: 0;
-			border: 0;
-			font-size: 100%;
-			font: inherit;
-			vertical-align: baseline;
-		}
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
 
-		/* HTML5 display-role reset for older browsers */
-		article,
-		aside,
-		details,
-		figcaption,
-		figure,
-		footer,
-		header,
-		hgroup,
-		menu,
-		nav,
-		section {
-			display: block;
-		}
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
 
-		body {
-			line-height: 1;
-		}
+    body {
+        line-height: 1;
+    }
 
-		ol,
-		ul {
-			list-style: none;
-		}
+    ol,
+    ul {
+        list-style: none;
+    }
 
-		blockquote,
-		q {
-			quotes: none;
-		}
+    blockquote,
+    q {
+        quotes: none;
+    }
 
-		blockquote:before,
-		blockquote:after,
-		q:before,
-		q:after {
-			content: '';
-			content: none;
-		}
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
 
-		table {
-			border-collapse: collapse;
-			border-spacing: 0;
-		}
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
 
-		/*  END OF RESET  */
-		@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap') html,
-		body {
-			height: 100%;
-			/* Ensure the full height of the page is used */
-		}
+    /*  END OF RESET  */
+    @import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap') html,
+    html,
+    body {
+        height: 100%;
+        /* Ensure the full height of the page is used */
+    }
 
-		span {}
+    span {}
 
-		h1 {
-			font-size: 3.5em;
-			line-height: 1em;
-			font-family: Protest Strike;
-		}
+    h1 {
+        font-size: 3.5em;
+        line-height: 1em;
+        font-family: Protest Strike;
+    }
 
-		p {
-			font-size: 1.8em;
-			line-height: 1.1em;
-			font-family: Source Code Pro;
-			font-weight: 500;
-		}
+    p {
+        font-size: 1.8em;
+        line-height: 1.1em;
+        font-family: Source Code Pro;
+        font-weight: 500;
+    }
 
-		a {
-			text-decoration: underline;
-			color: #fff;
-		}
+    a {
+        text-decoration: underline;
+        color: #fff;
+    }
 
-		li {
-			font-family: Source Code Pro;
-		}
+    li {
+        font-family: Source Code Pro;
+    }
 
-		#map {
-			position: fixed;
-			/* Ensure this is positioned relatively to contain the absolutely positioned header */
-			width: 100%;
-			/* Adjust width as needed */
-			height: 100%;
-			/* Adjust height as needed, vh units ensure it takes up full viewport height */
-		}
+    #map {
+        position: fixed;
+        /* Ensure this is positioned relatively to contain the absolutely positioned header */
+        width: 100%;
+        /* Adjust width as needed */
+        height: 100%;
+        /* Adjust height as needed, vh units ensure it takes up full viewport height */
+    }
 
-		#container {
-			position: absolute;
-			/* Position the header absolutely to float over the map */
-			bottom: 0;
-			/* Adjust as needed */
-			left: 0;
-			/* Adjust as needed */
-			width: 100%;
-			/* Ensure it spans across the map */
-			height: 100%;
-			background-color: rgba(0,
-					0,
-					0,
-					0);
-			/* Semi-transparent background for readability */
-			color: #fff;
-			/* Adjust text color as needed */
-			text-shadow: 0px 2px 4px #666;
-			padding: 20px;
-			/* Adjust padding as needed */
-			box-sizing: border-box;
-			/* Ensure padding doesn't affect the width */
-			z-index: 1;
-			/* Higher values will bring the element to the front */
-			/* Include other styles from above */
-		}
+    #container {
+        position: absolute;
+        /* Position the header absolutely to float over the map */
+        bottom: 0;
+        /* Adjust as needed */
+        left: 0;
+        /* Adjust as needed */
+        width: 100%;
+        /* Ensure it spans across the map */
+        height: 40%;
+        background-color: rgba(0, 0, 0, 0);
+        /* Semi-transparent background for readability */
+        color: #fff;
+        /* Adjust text color as needed */
+        text-shadow: 0px 0px 5px #333;
+        padding: 20px;
+        /* Adjust padding as needed */
+        box-sizing: border-box;
+        /* Ensure padding doesn't affect the width */
+        z-index: 1;
+        /* Higher values will bring the element to the front */
+    }
 
-		section {
-			margin: 15px;
-			bottom: 10%;
-			position: fixed;
-		}
+    section {
+        margin: 15px;
+        bottom: 10%;
+        position: fixed;
+    }
 
-		footer ul.icons li {
-			display: inline-block;
-			font-size: 2.5em;
-			margin-right: 0.4em;
-			color: #fff;
-		}
+    footer ul.icons li {
+        display: inline-block;
+        font-size: 2.5em;
+        margin-right: 0.4em;
+        color: #fff;
+    }
 
-		footer ul.icons li a {
-			color: #fff;
-		}
+    footer ul.icons li a {
+        color: #fff;
+    }
 
-		footer ul.icons li a :hover {
-			color: #2e96c0;
-		}
+    footer ul.icons li a :hover {
+        color: #F5D822;
+    }
 
-		footer ul.brand li a {
-			text-transform: uppercase;
-		}
-	</style>
+    footer ul.brand li a {
+        text-transform: uppercase;
+    }
+</style>
+
 <body>
-	<div id="map">
+    <div id="map">
 
-		<div id="container">
-			<section>
-				<h1>Let's GO Fort Lauderdale</h1>
-				<p>Exciting changes are on the horizon for the City! The <a href="https://www.fortlauderdale.gov/tam" target="_blank">Transpotation & Mobility</a> team is launching an open-source project that will change everything.</p>
-				<br>
-				<!-- Footer -->
-				<footer>
-					<ul class="icons">
-						<li><a href="https://github.com/City-of-Fort-Lauderdale"><i class="fa-brands fa-github" target="_blank"></i></a></li>
-						<li><a href="https://www.youtube.com/CityofFortLauderdale" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-						<li><a href="https://www.facebook.com/CityofFortLauderdale/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
-						<li><a href="https://www.instagram.com/cityoffortlauderdale" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-						<li><a href="https://twitter.com/FTLCityNews" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-						<!-- <li><a href="#"><i class="fa-brands fa-medium" target="_blank"></i></a></li> -->
-					</ul>
-					<br>
-					<ul class="brand">
-						<li><a href="https://www.fortlauderdale.gov" target="_blank">City of Fort Lauderdale</a></li>
-					</ul>
-				</footer>
-			</section>
-		</div>
-	</div>
-	<script>
-		mapboxgl.accessToken =
-			"pk.eyJ1IjoibWF1cmljaW9iYXF1ZXJvIiwiYSI6ImNscHNrZDd6aDA0NzcyaXJ6OTJiODVkMXYifQ.Sxnc-50cCwIwe1Om58AHQA";
-		const map = new mapboxgl.Map({
-			container: "map", // Specify the container ID
-			style: "mapbox://styles/mauriciobaquero/clrtokwti00qp01qs9hkfh2r7", // Specify the map style
-			center: [-80.13985, 26.1185], // Specify the initial center
-			zoom: 15.6, // Specify the initial zoom
-			pitch: 45 // Specify the initial pitch
-		});
+        <div id="container">
+            <section>
+                <h1>Let's GO Fort Lauderdale</h1>
+                <p>Exciting changes are on the horizon for the City! <a href="https://www.fortlauderdale.gov/tam" target="_blank">Transpotation & Mobility</a> team is launching an open-source project that will change everything.</p>
+                <br>
+                <!-- Footer -->
+                <footer>
+                    <ul class="icons">
+                        <li><a href="https://github.com/City-of-Fort-Lauderdale"><i class="fa-brands fa-github" target="_blank"></i></a></li>
+                        <li><a href="https://www.youtube.com/CityofFortLauderdale" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                        <li><a href="https://www.facebook.com/CityofFortLauderdale/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="https://www.instagram.com/cityoffortlauderdale" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="https://twitter.com/FTLCityNews" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+                        <!-- <li><a href="#"><i class="fa-brands fa-medium" target="_blank"></i></a></li> -->
+                    </ul>
+                    <br>
+                    <ul class="brand">
+                        <li><a href="https://www.fortlauderdale.gov" target="_blank">City of Fort Lauderdale</a></li>
+                    </ul>
+                </footer>
+            </section>
+        </div>
+    </div>
+    <script>
+        mapboxgl.accessToken =
+            "pk.eyJ1IjoibWF1cmljaW9iYXF1ZXJvIiwiYSI6ImNscHNrZDd6aDA0NzcyaXJ6OTJiODVkMXYifQ.Sxnc-50cCwIwe1Om58AHQA";
+        const map = new mapboxgl.Map({
+            container: "map", // Specify the container ID
+            style: "mapbox://styles/mauriciobaquero/clrtokwti00qp01qs9hkfh2r7", // Specify the map style
+            center: [-80.13985, 26.1185], // Specify the initial center
+            zoom: 15.6, // Specify the initial zoom
+            pitch: 45 // Specify the initial pitch
+        });
 
-		function rotateCamera(timestamp) {
-			// clamp the rotation between 0 -360 degrees
-			// Divide timestamp by 100 to slow rotation to ~10 degrees / sec
-			map.rotateTo((timestamp / 800) % 360, {
-				duration: 0
-			});
-			// Request the next frame of the animation.
-			requestAnimationFrame(rotateCamera);
-		}
-		map.on("load", () => {
-			// Start the animation.
-			rotateCamera(0);
-		});
-		// Disable map zooming
-		map.scrollZoom.disable();
-		map.boxZoom.disable();
-		map.doubleClickZoom.disable();
-		map.touchZoomRotate.disable();
-		// Disable map panning
-		map.dragPan.disable();
-		map.dragRotate.disable();
-		map.keyboard.disable();
-	</script>
+        function rotateCamera(timestamp) {
+            // clamp the rotation between 0 -360 degrees
+            // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+            map.rotateTo((timestamp / 800) % 360, {
+                duration: 0
+            });
+            // Request the next frame of the animation.
+            requestAnimationFrame(rotateCamera);
+        }
+        map.on("load", () => {
+            // Start the animation.
+            rotateCamera(0);
+        });
+        // Disable map zooming
+        map.scrollZoom.disable();
+        map.boxZoom.disable();
+        map.doubleClickZoom.disable();
+        map.touchZoomRotate.disable();
+        // Disable map panning
+        map.dragPan.disable();
+        map.dragRotate.disable();
+        map.keyboard.disable();
+    </script>
 
 </body>
 
