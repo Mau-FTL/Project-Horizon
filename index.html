@@ -147,91 +147,82 @@
     /*  END OF RESET  */
     @import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap') html,
     html,
-    body {
-        height: 100%;
-        /* Ensure the full height of the page is used */
-    }
+body {
+	height: 100%; /* Ensure the full height of the page is used */
+}
 
-    span {}
+span {
+}
 
-    h1 {
-        font-size: 5.5em;
-        line-height: 1em;
-        font-family: Protest Strike;
-    }
+h1 {
+	font-size: 3.5em;
+	line-height: 1em;
+	font-family: Protest Strike;
+}
+p {
+	font-size: 1.8em;
+	line-height: 1.1em;
+	font-family: Source Code Pro;
+	font-weight: 500;
+}
+a {
+	text-decoration: underline;
+	color: #fff;
+}
 
-    p {
-        font-size: 2.8em;
-        line-height: 1.1em;
-        font-family: Source Code Pro;
-        font-weight: 500;
-    }
+li {
+	font-family: Source Code Pro;
+}
 
-    a {
-        text-decoration: underline;
-        color: #fff;
-    }
+#map {
+	position: fixed; /* Ensure this is positioned relatively to contain the absolutely positioned header */
+	width: 100%; /* Adjust width as needed */
+	height: 100%; /* Adjust height as needed, vh units ensure it takes up full viewport height */
+}
 
-    li {
-        font-family: Source Code Pro;
-    }
+#container {
+	position: absolute; /* Position the header absolutely to float over the map */
+	bottom: 0; /* Adjust as needed */
+	left: 0; /* Adjust as needed */
+	width: 100%; /* Ensure it spans across the map */
+	height: 100%;
+	background-color: rgba(
+		0,
+		0,
+		0,
+		0.3
+	); /* Semi-transparent background for readability */
+	color: #fff; /* Adjust text color as needed */
+	text-shadow: 0px 0px 5px #333;
+	padding: 20px; /* Adjust padding as needed */
+	box-sizing: border-box; /* Ensure padding doesn't affect the width */
+	z-index: 1; /* Higher values will bring the element to the front */
+}
 
-    #map {
-        position: fixed;
-        /* Ensure this is positioned relatively to contain the absolutely positioned header */
-        width: 100%;
-        /* Adjust width as needed */
-        height: 100%;
-        /* Adjust height as needed, vh units ensure it takes up full viewport height */
-    }
+section {
+	margin: 15px;
+	bottom: 10%;
+	position: fixed;
+}
 
-    #container {
-        position: absolute;
-        /* Position the header absolutely to float over the map */
-        bottom: 0;
-        /* Adjust as needed */
-        left: 0;
-        /* Adjust as needed */
-        width: 100%;
-        /* Ensure it spans across the map */
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
-        /* Semi-transparent background for readability */
-        color: #fff;
-        /* Adjust text color as needed */
-        text-shadow: 0px 0px 5px #333;
-        padding: 20px;
-        /* Adjust padding as needed */
-        box-sizing: border-box;
-        /* Ensure padding doesn't affect the width */
-        z-index: 1;
-        /* Higher values will bring the element to the front */
-    }
+footer ul.icons li {
+	display: inline-block;
+	font-size: 2.5em;
+	margin-right: 0.4em;
+	color: #fff;
+}
 
-    section {
-        margin: 15px;
-        bottom: 10%;
-        position: fixed;
-    }
+footer ul.icons li a {
+	color: #fff;
+}
 
-    footer ul.icons li {
-        display: inline-block;
-        font-size: 2.5em;
-        margin-right: 0.4em;
-        color: #fff;
-    }
+footer ul.icons li a :hover {
+	color: #f5d822;
+}
 
-    footer ul.icons li a {
-        color: #fff;
-    }
-
-    footer ul.icons li a :hover {
-        color: #F5D822;
-    }
-
-    footer ul.brand li a {
-        text-transform: uppercase;
-    }
+footer ul.brand li a {
+	text-transform: uppercase;
+}
 </style>
 
 <body>
