@@ -2,91 +2,110 @@
 <html>
 
 <head>
-    <title>GO FTL</title>
-    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
-<link rel="stylesheet" href="reset.css">
-    <script src="https://kit.fontawesome.com/8a24a0c95e.js" crossorigin="anonymous"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js" crossorigin="anonymous"></script>
+  <title>GO FTL</title>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
+  <link rel="stylesheet" href="reset.css">
+  <script src="https://kit.fontawesome.com/8a24a0c95e.js" crossorigin="anonymous"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap') 
+  @import url('https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap') 
 
-html,
-body {
-	height: 100%; /* Ensure the full height of the page is used */
-}
+  /* <uniquifier>: Use a unique and descriptive class name */
+  /* <weight>: Use a value from 200 to 900 */
 
-span {
-}
-
-h1 {
-	font-size: 7rem;
-	line-height: 1em;
-	font-family: Protest Strike;
-}
-p {
-	font-size: 2.5rem;
-	line-height: 1.1em;
-	font-family: Source Code Pro;
-	font-weight: 500;
-}
-a {
-	text-decoration: underline;
-	color: #fff;
-}
-
-li {
-	font-family: Source Code Pro;
-}
-
-#map {
-	position: fixed; /* Ensure this is positioned relatively to contain the absolutely positioned header */
-	width: 100%; /* Adjust width as needed */
-	height: 100%; /* Adjust height as needed, vh units ensure it takes up full viewport height */
-}
-
-#container {
-	position: absolute; /* Position the header absolutely to float over the map */
-	bottom: 0; /* Adjust as needed */
-	left: 0; /* Adjust as needed */
-	width: 100%; /* Ensure it spans across the map */
-	height: 100%;
-	background-color: rgba(
-		0,
-		0,
-		0,
-		0.3
-	); /* Semi-transparent background for readability */
-	color: #fff; /* Adjust text color as needed */
-	text-shadow: 0px 0px 5px #333;
-	padding: 20px; /* Adjust padding as needed */
-	box-sizing: border-box; /* Ensure padding doesn't affect the width */
-	z-index: 1; /* Higher values will bring the element to the front */
-}
-
-section {
-	margin: 15px;
-	bottom: 10%;
-	position: fixed;
-}
-
-footer ul.icons li {
-	display: inline-block;
-	font-size: 5rem;
-	margin-right: 0.4rem;
-	color: #fff;
-}
-
-footer ul.icons li a {
-	color: #fff;
-}
-
-footer ul.icons li a :hover {
-	color: #f5d822;
-}
-
-footer ul.brand li a {
-	text-transform: uppercase;
-}
+  .source-code-pro-<uniquifier> {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+  }
+    
+  .protest-strike-regular {
+    font-family: "Protest Strike", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  	
+  html,
+  body {
+  	height: 100%; /* Ensure the full height of the page is used */
+  }
+  
+  span {
+  }
+  
+  h1 {
+  	font-size: 7rem;
+  	line-height: 1em;
+  	font-family: Protest Strike;
+  }
+  p {
+  	font-size: 2.5rem;
+  	line-height: 1.1em;
+  	font-family: Source Code Pro;
+  	font-weight: 500;
+  }
+  a {
+  	text-decoration: underline;
+  	color: #fff;
+  }
+  
+  li {
+  	font-family: Source Code Pro;
+  }
+  
+  #map {
+  	position: fixed; /* Ensure this is positioned relatively to contain the absolutely positioned header */
+  	width: 100%; /* Adjust width as needed */
+  	height: 100%; /* Adjust height as needed, vh units ensure it takes up full viewport height */
+  }
+  
+  #container {
+  	position: absolute; /* Position the header absolutely to float over the map */
+  	bottom: 0; /* Adjust as needed */
+  	left: 0; /* Adjust as needed */
+  	width: 100%; /* Ensure it spans across the map */
+  	height: 100%;
+  	background-color: rgba(
+  		0,
+  		0,
+  		0,
+  		0.3
+  	); /* Semi-transparent background for readability */
+  	color: #fff; /* Adjust text color as needed */
+  	text-shadow: 0px 0px 5px #333;
+  	padding: 20px; /* Adjust padding as needed */
+  	box-sizing: border-box; /* Ensure padding doesn't affect the width */
+  	z-index: 1; /* Higher values will bring the element to the front */
+  }
+  
+  section {
+  	margin: 15px;
+  	bottom: 10%;
+  	position: fixed;
+  }
+  
+  footer ul.icons li {
+  	display: inline-block;
+  	font-size: 5rem;
+  	margin-right: 0.4rem;
+  	color: #fff;
+  }
+  
+  footer ul.icons li a {
+  	color: #fff;
+  }
+  
+  footer ul.icons li a :hover {
+  	color: #f5d822;
+  }
+  
+  footer ul.brand li a {
+  	text-transform: uppercase;
+  }
 </style>
 </head>
 <body>
