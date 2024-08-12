@@ -2,114 +2,142 @@
 <html>
 
 <head>
-  <title>GO FTL</title>
-  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
-  <link rel="stylesheet" href="reset.css">
-  <script src="https://kit.fontawesome.com/8a24a0c95e.js" crossorigin="anonymous"></script>
-  <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro&display=swap" rel="stylesheet">
-<style>
-  .source-code-pro {
-    font-family: "Source Code Pro", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-  }
-    
-  .protest-strike-regular {
-    font-family: "Protest Strike", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  	
-  html,
-  body {
-  	height: 100%; /* Ensure the full height of the page is used */
-  }
-  
-  span {
-  }
-  
-  h1 {
-  	font-size: 5rem;
-  	line-height: 1em;
-  	font-family: Protest Strike;
-  }
-  p {
-  	font-size: 2.5rem;
-  	line-height: 1.1em;
-  	font-family: Source Code Pro;
-  	font-weight: 500;
-  }
-  a {
-  	text-decoration: underline;
-  	color: #fff;
-  }
-  
-  li {
-  	font-family: Source Code Pro;
-  }
-  
-  #map {
-  	position: fixed; /* Ensure this is positioned relatively to contain the absolutely positioned header */
-  	width: 100%; /* Adjust width as needed */
-  	height: 100%; /* Adjust height as needed, vh units ensure it takes up full viewport height */
-  }
-  
-  #container {
-  	position: absolute; /* Position the header absolutely to float over the map */
-  	bottom: 0; /* Adjust as needed */
-  	left: 0; /* Adjust as needed */
-  	width: 100%; /* Ensure it spans across the map */
-  	height: 100%;
-  	background-color: rgba(
-  		0,
-  		0,
-  		0,
-  		0.3
-  	); /* Semi-transparent background for readability */
-  	color: #fff; /* Adjust text color as needed */
-  	text-shadow: 0px 0px 5px #333;
-  	padding: 20px; /* Adjust padding as needed */
-  	box-sizing: border-box; /* Ensure padding doesn't affect the width */
-  	z-index: 1; /* Higher values will bring the element to the front */
-  }
-  
-  section {
-  	margin: 15px;
-  	bottom: 10%;
-  	position: fixed;
-  }
-  
-  footer ul.icons li {
-  	display: inline-block;
-  	font-size: 3rem;
-  	margin-right: 0.4rem;
-  	color: #fff;
-  }
-  
-  footer ul.icons li a {
-  	color: #fff;
-  }
-  
-  footer ul.icons li a :hover {
-  	color: #f5d822;
-  }
-  
-  footer ul.brand li a {
-  	text-transform: uppercase;
-  }
-</style>
+    <title>GO FTL</title>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css">
+    <link rel="stylesheet" href="reset.css">
+    <script src="https://kit.fontawesome.com/8a24a0c95e.js" crossorigin="anonymous"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <style>
+        .source-code-pro {
+            font-family: "Source Code Pro", monospace;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .protest-strike-regular {
+            font-family: "Protest Strike", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        html,
+        body {
+            height: 100%;
+            /* Ensure the full height of the page is used */
+        }
+
+        span {}
+
+        h1 {
+            font-size: 3.5em;
+            line-height: 1em;
+            font-family: Protest Strike;
+        }
+
+        h2 {
+            font-size: 2em;
+            line-height: 1em;
+            font-family: Protest Strike;
+        }
+
+        #countdown {
+            font-size: 1.5em;
+            line-height: 1em;
+        }
+
+        p {
+            font-size: 1.8em;
+            line-height: 1.1em;
+            font-family: Source Code Pro;
+            font-weight: 500;
+        }
+
+        a {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        li {
+            font-family: Source Code Pro;
+        }
+
+        #map {
+            position: fixed;
+            /* Ensure this is positioned relatively to contain the absolutely positioned header */
+            width: 100%;
+            /* Adjust width as needed */
+            height: 100%;
+            /* Adjust height as needed, vh units ensure it takes up full viewport height */
+        }
+
+        #container {
+            position: absolute;
+            /* Position the header absolutely to float over the map */
+            bottom: 0;
+            /* Adjust as needed */
+            left: 0;
+            /* Adjust as needed */
+            width: 100%;
+            /* Ensure it spans across the map */
+            height: 100%;
+            background-color: rgba(0,
+                    0,
+                    0,
+                    0.3);
+            /* Semi-transparent background for readability */
+            color: #fff;
+            /* Adjust text color as needed */
+            text-shadow: 0px 0px 5px #333;
+            padding: 20px;
+            /* Adjust padding as needed */
+            box-sizing: border-box;
+            /* Ensure padding doesn't affect the width */
+            z-index: 1;
+            /* Higher values will bring the element to the front */
+        }
+
+        section {
+            margin: 15px;
+            bottom: 10%;
+            position: fixed;
+        }
+
+        footer ul.icons li {
+            display: inline-block;
+            font-size: 2.5em;
+            margin-right: 0.4em;
+            color: #fff;
+        }
+
+        footer ul.icons li a {
+            color: #fff;
+        }
+
+        footer ul.icons li a :hover {
+            color: #f5d822;
+        }
+
+        footer ul.brand li a {
+            text-transform: uppercase;
+        }
+    </style>
 </head>
+
 <body>
     <div id="map">
         <div id="container">
             <section>
-                <h1 class="protest-strike-regular">Let's GO Fort Lauderdale</h1>
-                <p class="source-code-pro">Exciting changes are on the horizon for the City! <a href="https://www.fortlauderdale.gov/tam" target="_blank">Transportation & Mobility</a> team is launching an open-source project that will change everything.</p>
+                <h1>Open Public Beta Launch: Join Us in Shaping the Future of Parking</h1>
+                <p>Welcome to the GO FTL experience. We're excited to introduce you to our cutting-edge web app, designed to provide real-time updates on available parking spaces, ensuring you have the most accurate and up-to-date information at your fingertips. We can’t wait for you to join us on this journey toward smarter, more accessible parking solutions.</p>
                 <br>
+                <h2>Get ready to GO FTL</h2>
+                <br>
+                <p><span id="countdown"></span></p>
+                <br><br>
                 <!-- Footer -->
                 <footer>
                     <ul class="icons">
@@ -131,6 +159,7 @@
     <script>
         mapboxgl.accessToken =
             "pk.eyJ1IjoibWF1cmljaW9iYXF1ZXJvIiwiYSI6ImNscHNrZDd6aDA0NzcyaXJ6OTJiODVkMXYifQ.Sxnc-50cCwIwe1Om58AHQA";
+
         const map = new mapboxgl.Map({
             container: "map", // Specify the container ID
             style: "mapbox://styles/mauriciobaquero/clrtokwti00qp01qs9hkfh2r7", // Specify the map style
@@ -148,19 +177,50 @@
             // Request the next frame of the animation.
             requestAnimationFrame(rotateCamera);
         }
+
         map.on("load", () => {
             // Start the animation.
             rotateCamera(0);
         });
+
         // Disable map zooming
         map.scrollZoom.disable();
         map.boxZoom.disable();
         map.doubleClickZoom.disable();
         map.touchZoomRotate.disable();
+
         // Disable map panning
         map.dragPan.disable();
         map.dragRotate.disable();
         map.keyboard.disable();
+
+        // Set the date we're counting down to
+        var countDownDate = new Date("Oct 1, 2024 00:00:00").getTime();
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the countdown date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML =
+                days + "D " + hours + "H " + minutes + "M " + seconds + "S ";
+
+            // If the countdown is over, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
     </script>
 
 </body>
